@@ -54,6 +54,7 @@ Both implementations use Linux *IPTables* to enforce the specified policies. Pol
 | Additional features                      | None                       | Extended policy model consisting of Global Network Policy, Global Network Set, and Host Endpoint. For more information on using the `calicoctl` CLI to manage these extended features, see [calicoctl user reference][calicoctl]. |
 | Support                                  | Supported by Azure support and Engineering team | Calico community support. For more information on additional paid support, see [Project Calico support options][calico-support]. |
 | Logging                                  | Rules added / deleted in IPTables are logged on every host under */var/log/azure-npm.log* | For more information, see [Calico component logs][calico-logs] |
+| Monitoring and Visualization via Prometheus | Quick setup for Container Insights or Prometheus Server. Visualize with our Azure Workbook or Grafana Dashboard. Learn more about benefits and setup in [this article](monitor-and-visualize-with-npm) | See [Calico monitoring](calico-monitoring) with Felix metrics and Grafana. |
 
 ## Create an AKS cluster and enable network policy
 
@@ -462,6 +463,8 @@ For more about network resources, see [Network concepts for applications in Azur
 
 To learn more about policies, see [Kubernetes network policies][kubernetes-network-policies].
 
+To better understand your Network Configuration with NPM, see [Monitoring and Visualization with NPM][monitor-and-visualize-with-npm].
+
 <!-- LINKS - external -->
 [kubectl-apply]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#apply
 [kubectl-delete]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete
@@ -473,10 +476,12 @@ To learn more about policies, see [Kubernetes network policies][kubernetes-netwo
 [calicoctl]: https://docs.projectcalico.org/reference/calicoctl/
 [calico-support]: https://www.tigera.io/tigera-products/calico/
 [calico-logs]: https://docs.projectcalico.org/maintenance/troubleshoot/component-logs
+[calico-monitoring]: https://www.projectcalico.org/monitoring-calico-with-prometheus-and-grafana/
 [calico-aks-cleanup]: https://github.com/Azure/aks-engine/blob/master/docs/topics/calico-3.3.1-cleanup-after-upgrade.yaml
 
 <!-- LINKS - internal -->
 [install-azure-cli]: /cli/azure/install-azure-cli
+[monitor-and-visualize-with-npm]: monitor-and-visualize-with-NPM.md
 [use-advanced-networking]: configure-azure-cni.md
 [az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials
 [concepts-network]: concepts-network.md
