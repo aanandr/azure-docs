@@ -18,7 +18,7 @@ Users previously were only able to learn about their Network Configuration with 
 -	Number of entries in all IPSets and each IPSet (OS sets a hard limit on number of entries)
 -	Worst and average case performance per node for adding components to your Network Configuration
 
-### Current Metrics
+## Current Metrics
 | Metric Name                       | Description                                    | Prometheus Metric Type | Labels         |
 | --                                | --                                             | --       |  -                           |
 | `npm_num_policies`                | number of network policies                     | Gauge    |  -                           |
