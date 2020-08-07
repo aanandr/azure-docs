@@ -38,6 +38,7 @@ There's also an "exec_time_count" and "exec_time_sum" metric for each "exec_time
 Once you have Container Insights enabled for your cluster, you can [configure Container Insights agents](CI-config) to collect NPM's Prometheus metrics by setting the following in the [container-azm-ms-agentconfig.yaml](agentconfig.yaml): 
 ```
 FIXME include the 4 lines they need to uncomment and reference CI doc
+https://aka.ms/container-azm-ms-agentconfig
 ```
 and then running `kubectl apply -f container-azm-ms-agentconfig.yaml`.
 
