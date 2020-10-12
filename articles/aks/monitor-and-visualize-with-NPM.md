@@ -60,7 +60,7 @@ Learn more about [Azure monitor for containers collection settings in config map
 ## Visualization Options
 Once NPM metrics collection is enabled you can view the metrics in the Azure Portal using Container Insights or in Grafana.
 
-### Viewing in Azure Container Insights  
+### Viewing in Azure portal under Insights menu for the cluster
 Open Azure Portal. Once in your cluster, navigate to "Workbooks" under the Insights section, and open "Network Policy Manager (NPM) Configuration".
 
 Besides viewing the workbook (pictures below), you can also directly query the Prometheus metrics in "Logs" under the Insights section. For example, this query will return all the metrics being collected:
@@ -70,13 +70,13 @@ InsightsMetrics
 | where TimeGenerated > ago(5h)
 | where Name contains "npm_"
 ```
-### Viewing in Grafana Dashboard
-Set up your Grafana Server and configure a Log Analytics Data Source as described [here](CI-grafana-setup). Then, import our [Grafana Dashboard with a Log Analytics backend](CI-grafana-dashboard) into your Grafana Labs.
+### Viewing Azure Monitor for containers data in Grafana Dashboard
+Set up your Grafana Server and configure a Log Analytics Data Source as described [here](https://grafana.com/grafana/plugins/grafana-azure-monitor-datasource). Then, import our [Grafana Dashboard with a Log Analytics backend](https://grafana.com/grafana/dashboards/10956) into your Grafana Labs.
 
-The dashboard has visuals very similar to the Azure Workbook. 
+The dashboard has visuals very similar to the Azure Workbook. You can add panels to chart & visualize NPM metrics from InsightsMetrics table.
 
 ## Quick Setup for Prometheus Server
-Some users may choose to collect metrics with a Prometheus Server instead of Azure's native Container Insights. You merely need to add two jobs to your scrape config to collect NPM metrics. 
+Some users may choose to collect metrics with a Prometheus Server instead of Azure's native Azure Monitor for containers. You merely need to add two jobs to your scrape config to collect NPM metrics. 
 
 To install a simple Prometheus Server, add this helm repo on your cluster 
 ```
